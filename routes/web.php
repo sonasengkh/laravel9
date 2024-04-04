@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +15,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/ctrl',[HomeController::class, 'index']);
+Route::get('/post',PostController::class);
+
 Route::get('/', function () {
-    return view('welcome',['name'=> 'Youtube']);
-    
+    return view('welcome',['name'=> 'Youtube']); 
 });
 
 Route::get('/page',function(){
     return view('page.page1');
 });
 
-// Route::get("/home", function(){
-//     echo 1 + 1;
-// });
-// Route::match(['get', 'post'], '/home2', function () {
-//     echo "match";
-// });
+Route::get("/home", function(){
+    echo 1 + 1;
+});
+Route::match(['get', 'post'], '/home2', function () {
+    echo "match";
+});
+
