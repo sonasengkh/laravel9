@@ -17,6 +17,9 @@ use App\Http\Controllers\PostController;
 
 Route::get('/ctrl',[HomeController::class, 'index']);
 Route::get('/post',PostController::class);
+Route::get('/posts', function(){
+    return view('page.posts');
+});
 
 Route::get('/', function () {
     return view('welcome',['name'=> 'Youtube']); 
@@ -29,7 +32,7 @@ Route::get('/page',function(){
 Route::get("/home", function(){
     echo 1 + 1;
 });
-Route::match(['get', 'post'], '/home2', function () {
-    echo "match";
-});
+// Route::match(['get', 'post'], '/home2', function () {
+//     echo "match";
+// });
 

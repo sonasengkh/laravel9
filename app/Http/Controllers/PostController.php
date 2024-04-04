@@ -14,6 +14,7 @@ class PostController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('page.page1');
+        //return view('page.page1');
+        return view('page.post');
     }
 }
