@@ -29,10 +29,22 @@ Route::get('/page',function(){
     return view('page.page1');
 });
 
-Route::get("/home", function(){
-    echo 1 + 1;
-});
+// Route::get("/home", function(){
+//     echo 1 + 1;
+// });
 // Route::match(['get', 'post'], '/home2', function () {
 //     echo "match";
 // });
 
+Route::get('/home',function(){
+    return view('components.home');
+});
+Route::get('/about',function(){
+    return view('components.about');
+});
+Route::get('/home2',function(){
+    return view('components2.home2');
+});
+Route::get('/about2',function(){
+    return view('components2.about2');
+});
